@@ -32,3 +32,9 @@ Route::get('pesanan_search', [PesananController::class, 'search'])->name('pesana
 
 //controller
 Route::resource('pesanan', PesananController::class);
+
+
+//invoice
+Route::get('invoice', function () {
+    return view('invoice');
+});

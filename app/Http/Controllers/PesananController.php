@@ -35,6 +35,9 @@ class PesananController extends Controller
             'tanggal' => 'required',
             'kendaraan' => 'required',
             'nopol' => 'required',
+            'item' => 'required',
+            'quant' => 'required',
+            'harga' => 'required',
         ]);
 
         Pesanan::create($request->all());
@@ -70,6 +73,9 @@ class PesananController extends Controller
             'tanggal' => 'required',
             'kendaraan' => 'required',
             'nopol' => 'required',
+            'item' => 'required',
+            'quant' => 'required',
+            'harga' => 'required',
         ]);
 
         $pesanan->update($request->all());
@@ -93,8 +99,8 @@ class PesananController extends Controller
     {
         $searchTerm = $request->input('search');
 
-        $pesanan = Pesanan::where('nama', 'LIKE', "%{$searchTerm}%")
-                    ->orWhere('kode', 'LIKE', "%{$searchTerm}%")
+        $pesanan = Pesanan::where('kepada', 'LIKE', "%{$searchTerm}%")
+                    ->orWhere('nopol', 'LIKE', "%{$searchTerm}%")
                     ->get();
 
         return view('pesanan.index', ['pesanan' => $pesanan]);

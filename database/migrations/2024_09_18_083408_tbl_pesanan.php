@@ -19,6 +19,9 @@ return new class extends Migration
             $table->date('tanggal');
             $table->string('kendaraan');
             $table->string('nopol');
+            $table->string('item');
+            $table->integer('quant');
+            $table->double('harga');
 
             $table->timestamps();
         });

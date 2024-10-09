@@ -177,6 +177,27 @@
                                 </div>
                             </div>
 
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>Item:</strong>
+                                    <input type="text" name="item" value="{{ $pesanan->item }}" class="form-control" placeholder="Item">
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>Quant:</strong>
+                                    <input type="text" name="quant" value="{{ $pesanan->quant }}" class="form-control" placeholder="Quant">
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>Harga:</strong>
+                                    <input type="text" name="harga" value="{{ $pesanan->harga }}" class="form-control" placeholder="Harga">
+                                </div>
+                            </div>
+
                             <div class="col-xs-12 col-sm-12 col-md-12 text-center">
                                 <button type="submit" class="btn btn-primary">Update</button>
                                 <a> | </a>

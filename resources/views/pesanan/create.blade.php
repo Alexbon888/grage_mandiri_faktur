@@ -158,7 +158,7 @@
                             <div class="col-xs-12 col-sm-12 col-md-12">
                                 <div class="form-group">
                                     <strong>Tanggal:</strong>
-                                    <input type="text" name="tanggal" class="form-control" placeholder="Tanggal">
+                                    <input type="date" name="tanggal" class="form-control" placeholder="Tanggal">
                                 </div>
                             </div>
 
@@ -173,6 +173,27 @@
                                 <div class="form-group">
                                     <strong>Nopol:</strong>
                                     <input type="text" name="nopol" class="form-control" placeholder="Nopol">
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>Item:</strong>
+                                    <input type="text" name="item" class="form-control" placeholder="Item">
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>Quant:</strong>
+                                    <input type="text" name="quant" class="form-control" placeholder="Quant">
+                                </div>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-12">
+                                <div class="form-group">
+                                    <strong>Harga:</strong>
+                                    <input type="text" name="harga" class="form-control" placeholder="Harga">
                                 </div>
                             </div>
 

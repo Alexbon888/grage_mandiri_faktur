@@ -17,5 +17,8 @@ class Pesanan extends Model
         'tanggal',
         'kendaraan',
         'nopol',
+        'item',
+        'quant',
+        'harga',
     ];
 }

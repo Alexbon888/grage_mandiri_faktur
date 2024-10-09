@@ -105,7 +105,7 @@
                     <!-- Container Fluid -->
                     <div class="container-fluid" id="container-wrapper">
                         <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                            <h1 class="h3 mb-0 text-gray-800">Daftar Item</h1>
+                            <h1 class="h3 mb-0 text-gray-800">Daftar Pesanan</h1>
                         </div>
 
                         <!-- Row -->
@@ -114,12 +114,12 @@
                                 <!-- Simple Tables -->
                                 <div class="card">
                                     <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                        <h6 class="m-0 font-weight-bold text-primary">Tabel Item</h6>
+                                        <h6 class="m-0 font-weight-bold text-primary">Tabel Pesanan</h6>
 
                                         <!-- Search Form -->
-                                        <form action="{{ route('item.search') }}" method="GET" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                                        <form action="{{ route('pesanan.search') }}" method="GET" class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
                                             <div class="input-group">
-                                                <input type="text" name="search" class="form-control bg-light border-0 small" placeholder="Cari Item..." aria-label="Search" aria-describedby="basic-addon2">
+                                                <input type="text" name="search" class="form-control bg-light border-0 small" placeholder="Cari Nama / Nopol..." aria-label="Search" aria-describedby="basic-addon2">
                                                 <div class="input-group-append">
                                                     <button class="btn btn-primary" type="submit">
                                                         <i class="fas fa-search fa-sm"></i>
@@ -129,7 +129,7 @@
                                         </form>
                                         <!-- End Search Form -->
 
-                                        <a href="{{ route('item.create') }}" class="btn btn-sm btn-primary">Tambah Item</a>
+                                        <a href="{{ route('pesanan.create') }}" class="btn btn-sm btn-primary">Tambah Pesanan</a>
                                     </div>
 
                                     <div class="table-responsive">
@@ -142,6 +142,9 @@
                                                     <th>Tanggal</th>
                                                     <th>Kendaraan</th>
                                                     <th>Nopol</th>
+                                                    <th>Item</th>
+                                                    <th>Quant</th>
+                                                    <th>Harga</th>
                                                     <th>Action</th>
                                                 </tr>
                                             </thead>
@@ -150,11 +153,17 @@
                                                 @foreach ($pesanan as $p)
                                                     <tr>
                                                         <td>{{ $loop->iteration }}</td>
-                                                        <td>{{ $p->kode }}</td>
-                                                        <td>{{ $p->nama }}</td>
+                                                        <td>{{ $p->kepada }}</td>
+                                                        <td>{{ $p->polsek }}</td>
+                                                        <td>{{ $p->tanggal }}</td>
+                                                        <td>{{ $p->kendaraan }}</td>
+                                                        <td>{{ $p->nopol }}</td>
+                                                        <td>{{ $p->item }}</td>
+                                                        <td>{{ $p->quant }}</td>
                                                         <td>{{ $p->harga }}</td>
                                                         <td>
                                                             <form action="{{ route('pesanan.destroy', $p->id) }}" method="POST" style="display:inline-block;">
+                                                                <a href="{{ url('invoice') }}" class="btn btn-sm btn-primary">Cetak Faktur</a>
                                                                 <a href="{{ route('pesanan.edit', $p->id) }}" class="btn btn-sm btn-primary">Edit Pesanan</a>
                                                                 @csrf
                                                                 @method('DELETE')
