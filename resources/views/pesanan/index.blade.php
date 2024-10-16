@@ -163,7 +163,7 @@
                                                         <td>{{ $p->harga }}</td>
                                                         <td>
                                                             <form action="{{ route('pesanan.destroy', $p->id) }}" method="POST" style="display:inline-block;">
-                                                                <a href="{{ url('invoice') }}" class="btn btn-sm btn-primary">Cetak Faktur</a>
+                                                                <a href="{{ url('invoice', $p->id) }}" class="btn btn-sm btn-primary">Cetak Faktur</a>
                                                                 <a href="{{ route('pesanan.edit', $p->id) }}" class="btn btn-sm btn-primary">Edit Pesanan</a>
                                                                 @csrf
                                                                 @method('DELETE')

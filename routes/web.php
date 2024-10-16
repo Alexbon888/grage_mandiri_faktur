@@ -35,6 +35,8 @@ Route::resource('pesanan', PesananController::class);
 
 
 //invoice
+//route
+Route::get('invoice', [PesananController::class, 'indexInvoice'])->name('invoice');
 Route::get('invoice', function () {
     return view('invoice');
 });

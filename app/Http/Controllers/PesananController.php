@@ -16,6 +16,12 @@ class PesananController extends Controller
         return view('pesanan.index', compact('pesanan'));
     }
 
+    public function indexInvoice()
+    {
+        $pesanan = Pesanan::all();
+        return view('invoice', compact('invoice'));
+    }
+
     /**
      * Show the form for creating a new resource.
      */
